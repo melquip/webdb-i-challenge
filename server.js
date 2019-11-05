@@ -30,7 +30,7 @@ server.post('/api/accounts', async (req, res, next) => {
   try {
     const { name, budget } = req.body;
     const result = await db('accounts').insert({ name, budget });
-    res.status(200).json(result);
+    res.status(201).json(result);
   } catch (err) {
     next(err);
   }
